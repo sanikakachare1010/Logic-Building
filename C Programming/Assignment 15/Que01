@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+#define TRUE 1
+#define FALSE 0
+
+typedef int BOOL;
+
+BOOL Check(int Arr[],int iSize,int iNo)
+{
+     int iCnt = 0;
+     BOOL bChk = FALSE;
+
+     for(iCnt = 0 ;iCnt<iSize;iCnt++)
+     {
+        if(Arr[iCnt]==iNo)
+        {
+            bChk= TRUE;
+        }
+     }
+
+     return bChk;
+}
+int main()
+{
+    int iCnt = 0 ,iLength = 0,iValue = 0;
+    int *ptr = NULL;
+    BOOL bRet = FALSE;
+
+    printf("Enter number of elements:");
+    scanf("%d",&iLength);
+
+    printf("Enter number : ");
+    scanf("%d",&iValue);
+
+    ptr = (int *)malloc(iLength * sizeof(int));
+
+    if(ptr == NULL)
+    {
+        printf("Unable to allocate memory");
+        return -1;
+    }
+    printf("Enter %d elements ",iLength);
+
+
+    for (iCnt = 0; iCnt < iLength; iCnt++)
+    {
+        printf("Enter %d element :",iCnt+1);
+        scanf("%d",&ptr[iCnt]);
+    }
+
+    bRet = Check(ptr,iLength,iValue);
+
+    if(bRet == TRUE)
+    {
+         printf("Number is present");
+    }
+    else
+    {
+        printf("Number is not present");
+    }
+
+    free(ptr);
+
+    return 0;
+}
