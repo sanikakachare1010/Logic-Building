@@ -1,5 +1,5 @@
 /*
-   Write a recursive program which accept number from user and return its factoria
+   Write a recursive program which accept number from user and return its factorial
    
 */
 #include<iostream>
