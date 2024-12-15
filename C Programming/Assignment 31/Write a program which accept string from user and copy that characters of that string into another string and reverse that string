@@ -1,0 +1,28 @@
+ #include <stdio.h>
+#include <string.h>
+
+void ReverseString(char *src, char *dest)
+{
+    int length = strlen(src);
+    int i;
+
+    for (i = 0; i < length; i++)
+    {
+        dest[i] = src[length - i - 1];
+    }
+    dest[length] = '\0'; 
+}
+
+int main()
+{
+    char source[100], destination[100];
+
+    printf("Enter a string: ");
+    scanf("%[^\n]s", source);
+
+    ReverseString(source, destination);
+
+    printf("Reversed string: %s\n", destination);
+
+    return 0;
+}
